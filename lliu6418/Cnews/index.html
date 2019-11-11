@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><!--Defining the encoding format-->
+    <title>Cnews</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <!--Add the viewport attribute to make the page display properly on the phone-->
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="./css/reset.css"><!--Introducing a style file-->
+    <link rel="stylesheet" href="./css/main.css?id=1">
+    <script src='./js/main.js?id=1'></script><!--Introducing external js-->
+</head>
+<body>
+<!--set up navigation-->
+<div id="nav">
+    <div class="container">
+        <div class="navList"><!--Plus the minimum width to make it display properly on the phone screen-->
+            <div class="title" style="min-width: 150px;"><span>C</span>news</div>
+        </div>
+        <div class="navList">
+            <span><a>Home</a></span><div class="line"></div>
+        </div>
+        <div class="navList">
+            <span><a>Latest News</a></span><div class="line"></div><!--Write a div with an empty content, let it appear when hovering over the mouse-->
+        </div>
+        <div class="navList">
+            <span><a>Video</a></span><div class="line"></div>
+        </div>
+        <div class="navList"><!--The a tag removes the href attribute, and the page displays normally when it does not jump.-->
+            <span><a>About Us</a></span><div class="line"></div>
+        </div>
+        <div class="navList navt">
+            <span class='loginCon' style='display: inline-block;position: relative'><!--Modify the span display value, you can no longer be an inline element-->
+                <a id="login">log in</a>
+                <div class="login"><!--Use css animation to make a login drop-down box-->
+                    <div class="con">
+                        <input class="input" type="text" placeholder="username">
+                        <input class="input" type="password" placeholder="password">
+                        <div class="text">
+                            <a href="./signup.html">Haven't have a account？</a><!--Jump page-->
+                        </div>
+                        <div class="text">
+                            <label><input type="checkbox" value="Y" style="vertical-align: middle"> Remember me</label><!--Vertical-align can align text and selection boxes-->
+                        </div>
+                        <div class="btn" style="width: 98%;margin: 10px 0;">log in</div>
+                    </div><!--98% proportional width, leaving the right and left sides with a suitable distance-->
+                </div>
+            </span>
+        </div>
+    </div>
+</div>
+<!--Introducing and showing the part of join us in the middle of the homepage-->
+<div class="head">
+    <div class="container">
+        <div class="title"><span>C</span>news</div><!--Span wrapped individual letters, set a larger font-->
+        <div class="desc">front page news , front page story</div>
+        <div class="desc2">Some interesting news. Some interesting things around you are shown to you every day</div>
+        <div class="btn" id='signup'>join us</div>
+    </div>
+</div>
+<!--In the news section, the image is displayed on the left and the content is displayed on the right.-->
+<div class="news">
+    <div class="container">
+        <div class="list">
+            <div class="left">
+                <div>
+                    <img src="./img/new1.png" alt=""><!--Add a div to the outside of the image can make picture enlargement if hovering -->
+                </div>
+            </div>
+            <div class="right">
+                <div class="title">The Extreme Sport Aussies Keep Dominating</div>
+                <div class="time">2019-10-05 09:10:00</div>
+                <div class="con">
+                    Overnight the Chopperoos cemented their World Champion status when they beat long-time rivals New Zealand in a record-breaking win in the finals of the STIHL Timbersports World Championships held in Prague.
+                </div>
+                <div class="join">read more</div>
+            </div>
+        </div>
+        <div class="list">
+            <div class="left"><!--Implementation page, left and right layout-->
+                <div>
+                    <img src="./img/new2.png" alt="">
+                </div>
+            </div>
+            <div class="right">
+                <div class="title">25 richest families in America</div>
+                <div class="time">2019-10-04 09:10:00</div>
+                <div class="con">
+                    Americans are enthralled with watching the lifestyles of the rich and famous unfold on reality television and social media. Despite the extravagant cars and vacations showcased on such shows as “Keeping Up With the Kardashians” and “The Real Housewives” franchise, the wealth of these celebrities pales in comparison to some of America’s richest families.
+                </div>
+                <div class="join">read more</div><!--read more 右至显示-->
+            </div>
+        </div>
+        <div class="list">
+            <div class="left">
+                <div>
+                    <img src="./img/news3.png" alt="">
+                </div>
+            </div>
+            <div class="right">
+                <div class="title">Thandi Phoenix details self-titled debut EP, and first ever headline national tour</div>
+                <div class="time">2019-10-03 09:10:00</div>
+                <div class="con">
+                    Singer-songwriter Thandi Phoenix joins Flex Mami in the BUILD Sydney studio to discuss her soulful, debut self-titled EP, the overwhelming feeling of love and happiness she felt during her first national tour, and how a trip to South Africa really made her kick it in to full gear.
+                </div>
+                <div class="join">read more</div>
+            </div>
+        </div>
+        <div class="list">
+            <div class="left">
+                <div>
+                    <img src="./img/new4.png" alt="">
+                </div>
+            </div>
+            <div class="right">
+                <div class="title">Derby Day fashion 2019: All the hot looks and frock shocks</div>
+                <div class="time">2019-10-03 09:10:00</div>
+                <div class="con">
+                    Celebrities have descended on Melbourne’s Flemington Racecourse, all dressed up in their racing finest for this year’s Derby Day.
+                    There’s plenty of money at stake as the action plays out on the course – but for most of us, it’s all about what’s going on trackside.
+                    Derby Day is all about the monochrome, so as usual, it’s a sea of white and black among A-list guests.
+                    But standing out from the crowd was Phoebe Burgess, who made an unexpected appearance trackside at Lexus’ marquee.
+                </div>
+                <div class="join">read more</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Pictures and news use left and right layout-->
+<div class="line">
+    <div class="container">
+        <div class="con">
+            <div class="left">
+                <div class="title">About us</div>
+                <div class="li">
+                    <img src="./img/adr.png" alt="">
+                    <span>Port science and Technology City, No. 668</span>
+                </div>
+                <div class="li">
+                    <img src="./img/pho.png" alt="">
+                    <span>021-1234567890</span>
+                </div>
+                <div class="li">
+                    <img src="./img/msg.png" alt="">
+                    <span>abc668@me.com</span>
+                </div>
+                <div class="li">
+                    <img src="./img/clock.png" alt="">
+                    <span>from Monday to Friday</span>
+                </div>
+            </div>
+            <div class="right">
+                <div class="title">
+                    popular type of news
+                </div>
+                <div class="li">→&nbsp;&nbsp;World</div>
+                <div class="li">→&nbsp;&nbsp;Sport</div>
+                <div class="li">→&nbsp;&nbsp;music</div>
+                <div class="li">→&nbsp;&nbsp;entertainment</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--set up a foot-->
+<div class="foot">
+    
+</div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+﻿
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*General style, remove the default padding change box-sizing attribute*/
+html {
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-size: 62.5%
+}
+
+body {
+    font-size: 1.4rem;
+    color: #666;
+    overflow: hidden;
+}
+
+a,
+img,
+input {
+    text-decoration: none;
+    font-size: 1.4rem;
+    border: 0
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+ol,
+li,
+dl,
+ul,
+input,
+tr,
+td {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    color: #666;
+    font-weight: normal;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    outline: none;
+    color: #666
+}
+
+a:hover, a:active, a:visited, a:link {
+    text-decoration: none !important;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
+    background-color: transparent;
+}
+
+input,
+button,
+select,
+textarea {
+    outline: none
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+textarea {
+    resize: none
+}
+
+

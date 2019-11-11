@@ -1,0 +1,340 @@
+﻿body, html {
+    width: 100%;
+    height: 100%;
+    color: #444;
+}
+
+body {
+    background: #fff;
+    overflow: auto;
+}
+
+/*写一个容器，有对法宽度，这样在宽屏电脑上可以显示到屏幕中间*/
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.btn {
+    color: #FFF;
+    background-color: #33C3F0;
+    display: inline-block;
+    height: 38px;
+    padding: 0 30px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 38px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+/*改变按钮hover样式*/
+.btn:hover {
+    background-color: #1EAEDB;
+}
+
+#nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 10px;
+    font-size: 18px;
+    color: #fff;
+    line-height: 32px;
+    z-index: 3;
+}
+/*定位布局，使nav固定在头部*/
+#nav.bg {
+    background: #000;
+}
+
+#nav .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#nav .navList {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+/*Change the width of each navigation bar when it detects that the webpage is on the phone*/
+@media (max-width: 768px) {
+    #nav .navList {
+        width: 33.3%;
+        flex: auto;
+    }
+}
+
+#nav .navList .login {
+    position: absolute;
+    left: -120px;
+    width: 320px;
+    background: #fff;
+    height: 0;
+    transition: all 0.3s;/*Hide the drop-in box of the log in by animation, and display it when the mouse hovers*/
+    overflow: hidden;
+    border-radius: 4px;
+    top: 54px;
+    box-shadow: 0 0 10px 0 #000;
+    opacity: 1;
+}
+/*适配手机*/
+@media (max-width: 768px) {
+    #nav .navList .login {
+        left: initial;
+        right: 0px;
+    }
+}
+
+#nav .navList .login .con {
+    padding: 20px 10px;
+}
+
+#nav .navList .login .con .input {
+    border: 1px solid #333;
+    border-radius: 40px;
+    height: 40px;
+    line-height: 46px;
+    font-size: 18px;
+    color: #333;
+    padding: 0 20px;
+    width: 100%;
+    background: #eee;
+    margin: 15px 0;
+}
+#nav .navList .login .con .text{
+    padding: 0 5px;
+    text-align: left;
+    font-size: 16px;
+    color: #333;
+}
+#nav .navList .login .con .text a{
+    font-size: 16px;
+    color: #333;
+    font-weight: normal;
+}
+#nav .navList .login .con .text a:hover{
+    color: #1eaedb;
+}
+#nav .navList span {
+    display: inline-block;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+#nav .navList span a {
+    color: #000;
+}
+#nav.bg .navList span a {
+    color: #fff;
+}
+#nav .navList .line {
+    width: 100px;
+    height: 4px;
+    background: transparent;
+    margin: 0 auto;
+}
+/*Can control the color change and the black color bar appear at the bottom when the mouse hovers*/
+#nav .navList:hover span a {
+    font-weight: bold;
+}
+#nav .navt:hover span a {
+    font-weight: normal;
+}
+
+#nav .navList:hover .line {
+    background: #00BCD4;
+}
+#nav .navt:hover .line {
+    background: rgba(0,0,0,0);
+}
+#nav .navt .signup:hover .line {
+    background: #00BCD4;
+}
+#nav .navt .loginCon:hover a {
+    font-weight: bold;
+}
+#nav .navt .signup:hover a {
+    font-weight: bold;
+}
+
+#nav .navt .loginCon:hover .login {
+    height: 310px;
+}
+#nav .navList .title {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: left;
+    color: #00BCD4;
+}
+#nav .navList .title span{
+    font-size: 42px;
+}
+
+.news{
+    padding: 20px 20px 30px;
+}
+.news .like{
+    padding: 15px 0;
+    text-align: center;
+    font-size: 26px;
+    line-height: 40px;
+    color: #232323;
+    font-weight: bolder;
+}
+.news .title{
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+}
+.news .title .name{
+    font-size: 36px;
+    color: #333;
+    line-height: 50px;
+}
+.news .title .x{
+    color: #dfdfdf;
+    font-size: 30px;
+    padding: 10px;
+}
+.news .title .n{
+    color: #666;
+    font-size: 14px;
+    padding-right: 15px;
+    padding-top: 5px;
+}
+.news .title .line{
+    color: #666;
+    font-size: 14px;
+    border-top: 1px solid #f3f3f3;
+    border-bottom: 1px solid #f3f3f3;
+    height: 5px;
+    flex: 1;
+    margin-top: 9px;
+}
+.content{
+    padding: 30px 20px;
+}
+.content .flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.content .flex .left{
+    width:40%;
+    background-color: #f8f8f8;
+}
+@media (max-width: 768px) {
+    .content .flex .left {
+        width: 100%;
+    }
+}
+/*适配手机，改为上下布局*/
+.content .flex .left .img{
+    overflow: hidden;
+}
+.content .flex .left .img img{
+    width: 100%;
+    transition: all 0.2s;
+    cursor: pointer;
+    display: block;
+}
+.content .flex .left .img img:hover{
+    transform: scale(1.05);
+}
+.content .flex .left .title{
+    font-size: 18px;
+    color: #333;
+    line-height: 26px;
+    text-align: center;
+    padding: 16px 10px 10px;
+}
+.content .flex .left .desc{
+    text-align: left;
+    padding: 0 10px 20px;
+}
+.content .flex .right{
+    flex: 1;
+    padding-left: 40px;
+}
+.content .flex .right .new{
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+.content .flex .right .new .img{
+    width: 30%;
+    overflow: hidden;
+}
+.content .flex .right .new .img img{
+    width: 100%;
+    transition: all 0.2s;
+    cursor: pointer;
+    display: block;
+}
+.content .flex .right .new .img img:hover{
+    transform: scale(1.05);
+}
+.content .flex .right .new .con{
+    flex: 1;
+    padding-left: 20px;
+}
+.content .flex .right .new .con .h1{
+    font-size: 16px;
+    line-height: 30px;
+    color: #444;
+}
+.content .flex .right .new .con .time{
+    font-size: 14px;
+    line-height: 40px;
+    color: #999;
+}
+.content .flex .right .new .con .h2{
+    font-size: 14px;
+    line-height: 24px;
+    color: #666;
+}
+.content .flex .right .morenew{
+    padding-top: 10px;
+    border-top:1px solid #eee;
+}
+.content .flex .right .morenew .newsList{
+    position: relative;
+    height: 30px;
+}
+.content .flex .right .morenew .newsList div{
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 14px;
+    color: #333;
+    line-height: 30px;
+    cursor: pointer;
+    position: absolute;
+    padding-right: 90px;
+    top:0;
+    left: 0;
+}
+.content .flex .right .morenew .newsList div:hover{
+   color: red;
+}
+.content .flex .right .morenew .newsList span{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-left: 15px;
+    font-size: 14px;
+    color: #999;
+    line-height: 30px;
+}
+.foot {
+    background: #607D8B;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 0;
+    text-align: center;
+}

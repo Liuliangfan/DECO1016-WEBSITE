@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>signup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/signup.css">
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="con">
+                <!--Registration process description-->
+                <div class="left">
+                    <div class="text">Register</div>
+                    <div class="next">↓</div>
+                    <div class="text">submit successfully</div>
+                    <div class="next">↓</div><!--Tell the user the approximate process-->
+                    <div class="text">Accept you</div>
+                    <div class="next">↓</div>
+                    <div class="text">browse the full text</div>
+                </div>
+                <!--Registration form-->
+                <div class="right">
+                    <form name="formVal">
+                        <div class="title">Your information</div>
+                        <div class='form'>
+                            <div class="li First">
+                                <span>First name:</span>
+                                <input type="text" placeholder='please fill in your First name'>
+                                <div class="errText err-First"></div><!--When the error occurs, prompt *-->
+                            </div>
+                            <div class="li Last">
+                                <span>Last name:</span>
+                                <input type="text" placeholder='please fill in your Last name'>
+                                <div class="errText err-Last"></div>
+                            </div>
+                            <div class="li" style="border-color: rgba(0,0,0,0)"><!--Turn the border of gender selection into transparent-->
+                                <span style="padding-right: 20px;">Gender:</span>
+                                <div class="choose male" style="margin-bottom: 0;">male</div>
+                                <div class="choose female" style="margin-bottom: 0;">female</div>
+                                <div class="errText err-Gender"></div>
+                            </div>
+                            <div class="li date">
+                                <span>Birthday date month year:</span>
+                                <input type="date" name="" placeholder='please fill in your Birthday'><!--Date type input box-->
+                                <div class="errText err-date"></div>
+                            </div>
+                            <div class="li Email">
+                                <span>Email:</span>
+                                <input type="email" placeholder='please fill in your Email'>
+                                <div class="errText err-Email"></div>
+                            </div>
+                            <div class="li password">
+                                <span>Password:</span><!--Password input box-->
+                                <input type="password" placeholder='please fill in password'>
+                                <div class="errText err-password"></div>
+                            </div>
+                            <div class="li confirm-password">
+                                <span>confirm password:</span>
+                                <input type="password" placeholder='Must same width password'>
+                                <div class="errText err-confirm-password"></div>
+                            </div>
+                           
+                            <div class="li" style="border-color: rgba(0,0,0,0)"><!--Write different types of choices-->
+                                <div class="errText err-like"></div>
+                                <div style="width: 100%;padding-bottom: 12px;">Choose 5 types of news you like:</div>
+                                <div class="choose national">national</div>
+                                <div class="choose world">world</div>
+                                <div class="choose lifestyle">lifestyle</div>
+                                <div class="choose travel">travel</div>
+                                <div class="choose entertainment">entertainment</div>
+                                <div class="choose technology">technology</div>
+                                <div class="choose finance">finance</div>
+                                <div class="choose health">health</div>
+                            </div>
+                        </div>
+                        <div class="btn">sign up</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // Determine if each input box has a value, if there is no value, prompt the user to enter
+    document.querySelector('form .btn').addEventListener('click',function () {
+        var error=false;
+        if(document.querySelector('.li.First input').value){
+            document.querySelector('.err-First').innerHTML='';
+        }else {
+            document.querySelector('.err-First').innerHTML='*';
+            error=true
+        }
+        if(document.querySelector('.li.Last input').value){
+            document.querySelector('.err-Last').innerHTML='';
+        }else {
+            document.querySelector('.err-Last').innerHTML='*';
+            error=true
+        }
+        if(document.querySelector('.li.date input').value){
+            document.querySelector('.err-date').innerHTML='';
+        }else {
+            document.querySelector('.err-date').innerHTML='*';
+            error=true
+        }
+        if(document.querySelector('.li.Email input').value){
+            document.querySelector('.err-Email').innerHTML='';
+        }else {
+            document.querySelector('.err-Email').innerHTML='*';
+            error=true
+        }
+        if(document.querySelector('.li.password input').value){
+            document.querySelector('.err-password').innerHTML='';
+        }else {
+            document.querySelector('.err-password').innerHTML='*';
+            error=true
+        }
+        // Determine whether the password is consistent twice
+        if(document.querySelector('.li.confirm-password input').value){
+            document.querySelector('.err-confirm-password').innerHTML='';
+            if(document.querySelector('.li.password input').value!=document.querySelector('.li.confirm-password input').value){
+                document.querySelector('.err-confirm-password').innerHTML='*';
+                error=true
+            }
+        }else {
+            document.querySelector('.err-confirm-password').innerHTML='*';
+            error=true
+        }
+
+        if(document.querySelector('.male').className.indexOf('yes')==-1
+            &&document.querySelector('.female').className.indexOf('yes')==-1){
+            document.querySelector('.err-Gender').innerHTML='*';
+            error=true
+        }else{
+            document.querySelector('.err-Gender').innerHTML='';
+        }
+        // Save each selection to an array, and then determine if you need to remind the user to make a selection by the length of the array, then save it to localStorage
+        var likes=[]
+        if(document.querySelector('.national').className.indexOf('yes')!=-1){
+            likes.push('national')
+        }
+        if(document.querySelector('.world').className.indexOf('yes')!=-1){
+            likes.push('world')
+        }
+        if(document.querySelector('.lifestyle').className.indexOf('yes')!=-1){
+            likes.push('lifestyle')
+        }
+        if(document.querySelector('.travel').className.indexOf('yes')!=-1){
+            likes.push('travel')
+        }
+        if(document.querySelector('.entertainment').className.indexOf('yes')!=-1){
+            likes.push('entertainment')
+        }
+        if(document.querySelector('.technology').className.indexOf('yes')!=-1){
+            likes.push('technology')
+        }
+        if(document.querySelector('.finance').className.indexOf('yes')!=-1){
+            likes.push('finance')
+        }
+        if(document.querySelector('.health').className.indexOf('yes')!=-1){
+            likes.push('health')
+        }
+        if(likes.length<5){
+            document.querySelector('.err-like').innerHTML='*';
+            error=true
+        }else {
+            document.querySelector('.err-like').innerHTML='';
+            //Save the selected hobby in string format to local storage
+            localStorage.setItem('likes',JSON.stringify(likes))
+        }
+        if(!error){
+            window.location.href='./success.html'
+        }
+    })
+    //Click to modify the selected status
+    document.querySelector('.male').addEventListener('click',function () {
+        document.querySelector('.male').className='choose male yes';
+        document.querySelector('.female').className='choose female';
+    })
+    document.querySelector('.female').addEventListener('click',function () {
+        document.querySelector('.male').className='choose male';
+        document.querySelector('.female').className='choose female yes';
+    })
+    //Choose 5 types of news you like. Determining and processing each selected state
+    document.querySelector('.national').addEventListener('click',function () {
+        if(document.querySelector('.national').className=='choose national yes'){
+            document.querySelector('.national').className='choose national';
+        }else{
+            document.querySelector('.national').className='choose national yes';
+        }
+    })
+    document.querySelector('.world').addEventListener('click',function () {
+        if(document.querySelector('.world').className=='choose world yes'){
+            document.querySelector('.world').className='choose world';
+        }else{
+            document.querySelector('.world').className='choose world yes';
+        }
+    })
+    document.querySelector('.lifestyle').addEventListener('click',function () {
+        if(document.querySelector('.lifestyle').className=='choose lifestyle yes'){
+            document.querySelector('.lifestyle').className='choose lifestyle';
+        }else{
+            document.querySelector('.lifestyle').className='choose lifestyle yes';
+        }
+    })
+    document.querySelector('.travel').addEventListener('click',function () {
+        if(document.querySelector('.travel').className=='choose travel yes'){
+            document.querySelector('.travel').className='choose travel';
+        }else{
+            document.querySelector('.travel').className='choose travel yes';
+        }
+    })
+    document.querySelector('.entertainment').addEventListener('click',function () {
+        if(document.querySelector('.entertainment').className=='choose entertainment yes'){
+            document.querySelector('.entertainment').className='choose entertainment';
+        }else{
+            document.querySelector('.entertainment').className='choose entertainment yes';
+        }
+    })
+    document.querySelector('.technology').addEventListener('click',function () {
+        if(document.querySelector('.technology').className=='choose technology yes'){
+            document.querySelector('.technology').className='choose technology';
+        }else{
+            document.querySelector('.technology').className='choose technology yes';
+        }
+    })
+    document.querySelector('.finance').addEventListener('click',function () {
+        if(document.querySelector('.finance').className=='choose finance yes'){
+            document.querySelector('.finance').className='choose finance';
+        }else{
+            document.querySelector('.finance').className='choose finance yes';
+        }
+    })
+    document.querySelector('.health').addEventListener('click',function () {
+        if(document.querySelector('.health').className=='choose health yes'){
+            document.querySelector('.health').className='choose health';
+        }else{
+            document.querySelector('.health').className='choose health yes';
+        }
+    })
+</script>
+</html>
